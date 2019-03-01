@@ -82,3 +82,24 @@ g6 = filter2(gauss55, a3, 'valid');
 figure;image(g6);colormap(gray(256));
 g7 = uint8(g6);
 figure,imshow(g7);title('5*5 gauss filtre');
+
+
+
+-> kod_6:
+I4 = imread('ders_3\filtresim3.png');
+a4 = rgb2gray(I4);
+imshow(a4);title('asil goruntu');
+
+sharp = [0 -1 0; -1 5 -1; 0 -1 0];
+s1 = filter2(sharp, a4, 'valid');
+figure;image(s1);colormap(gray(256));
+s2 = uint8(256);
+figure,imshow(s2);title('3*3 keskinleştime filtre');
+
+sharp2 = [-1 -1 -1; -1 9 -1; -1 -1 -1]/9;
+s3 = filter2(sharp, a4, 'valid');
+figure;image(s3);colormap(gray(256));
+s4 = uint8(256);
+figure,imshow(s4);title('3*3 keskinleştime filtre2');
+
+
