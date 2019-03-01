@@ -15,3 +15,9 @@ https://e.edim.co/130434037/KiNzIUjwDhBYMCOw.pdf?response-content-disposition=fi
 
 
 #ders_3
+
+
+kod_4:
+
+![ekran alintisi](https://user-images.githubusercontent.com/37161227/53623428-102b6980-3c0e-11e9-917b-cbd943477099.PNG)
+
