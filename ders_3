@@ -50,3 +50,16 @@ b22 = uint8(b2); figure,imshow(b22);
 b3 = filter2(filtre99,a2,'valid');
 figure;image(b3);colormap(gray(256));
 b33 = uint8(b3); figure,imshow(b33);
+
+
+
+-> kod_4:
+
+
+
+
+
+
+
+
+![ekran alintisi](https://user-images.githubusercontent.com/37161227/53623428-102b6980-3c0e-11e9-917b-cbd943477099.PNG)
