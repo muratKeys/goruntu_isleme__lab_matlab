@@ -1,15 +1,14 @@
 
-
 f3 = ones(3,3)/9;
 f5 = ones(5,6)/25;
 f7 = ones(7,7)/49;
 f11 = ones(11,11)/121;
 
-I = imread('rose.bmp');
+I = imread('ders_3\filtresim0.png');
 figure,imshow(I); title('Original');
 
 
-I3 = filter2(f3,I,'full'); %valid, full
+I3 = filter2(f3,I,'same'); %same, valid, full
 figure; image(I3);
 colormap(gray(256));
 
