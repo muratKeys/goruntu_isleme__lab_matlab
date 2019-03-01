@@ -1,4 +1,6 @@
 
+kod_1:
+
 f3 = ones(3,3)/9;
 f5 = ones(5,6)/25;
 f7 = ones(7,7)/49;
@@ -7,9 +9,45 @@ f11 = ones(11,11)/121;
 I = imread('ders_3\filtresim0.png');
 figure,imshow(I); title('Original');
 
-
 I3 = filter2(f3,I,'same'); %same, valid, full
 figure; image(I3);
 colormap(gray(256));
 
 title('3*3 ortalama');
+
+
+
+kod_2:
+
+I = imread('ders_3\filtresim1.png');
+a = rgb2gray(I);
+imshow(a);title('asıl goruntu');
+
+f1 = [111;111;111]/9;
+
+b = filter2(f1,a,'valid');
+figure;image(b);colormap(gray(256));
+
+b2 = uint8(b);
+figure,imshow(b2);title('filterlenmis goruntu');
+
+
+
+
+kod_3:
+
+I2 = imread('ders_3\filtresim1.png');
+a2 = rgb2gray(I2);
+imshow(a);title('asıl goruntu');
+
+filtre33 = ones(3,3)/9;
+filtre99 = ones(9,9)/81;
+filtre3535 = ones(35,35)/1225;
+
+b2 = filter2(filtre33,a2,'valid');
+figure;image(b2);colormap(gray(256));
+b22 = uint8(b2); figure,imshow(b22);
+
+b3 = filter2(filtre99,a2,'valid');
+figure;image(b3);colormap(gray(256));
+b33 = uint8(b3); figure,imshow(b33);
