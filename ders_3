@@ -17,7 +17,7 @@ title('3*3 ortalama');
 
 
 
-kod_2:
+-> kod_2:
 
 I = imread('ders_3\filtresim1.png');
 a = rgb2gray(I);
@@ -33,8 +33,7 @@ figure,imshow(b2);title('filterlenmis goruntu');
 
 
 
-
-kod_3:
+-> kod_3:
 
 I2 = imread('ders_3\filtresim1.png');
 a2 = rgb2gray(I2);
