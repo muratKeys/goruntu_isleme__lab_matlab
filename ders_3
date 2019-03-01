@@ -54,5 +54,16 @@ b33 = uint8(b3); figure,imshow(b33);
 
 
 -> kod_4:
+I2 = imread('ders_3\filtresim1.png');
+a2 = rgb2gray(I2);
+imshow(a2);title('asil goruntu');
 
+a3 = imnoise(a2,'gaussian');title('gaussian');
+figure,imshow(a3);title('gurultu eklenmis goruntu');
+figure33 = ones(3,3)/9;
+
+g1 = filter2(filtre33, a3, 'valid');
+figure;image(g1);colormap(gray(256));
+g2 = uint8(g1);
+figure,imshow(a2);title('temizlenmis goruntu');
 
