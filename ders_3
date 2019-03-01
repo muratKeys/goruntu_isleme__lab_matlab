@@ -67,3 +67,15 @@ figure;image(g1);colormap(gray(256));
 g2 = uint8(g1);
 figure,imshow(a2);title('temizlenmis goruntu');
 
+
+-> kod_5:
+I3 = imread('ders_3\filtresim3.png');
+a3 = rgb2gray(I3);
+imshow(a3);title('asil goruntu');
+
+gauss33 = [121; 242; 121]/16;
+g3 = filter2(gauss33, a3, 'valid');
+figure;image(g3);colormap(gray(256));
+g4 = uint8(g3);
+figure,imshow(g4);title('3*3 gauss filtre');
+
