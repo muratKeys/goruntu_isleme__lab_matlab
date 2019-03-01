@@ -1,5 +1,5 @@
 
--> kod_1:
+% -> kod_1:
 f3 = ones(3,3)/9;
 f5 = ones(5,6)/25;
 f7 = ones(7,7)/49;
@@ -16,7 +16,7 @@ title('3*3 ortalama');
 
 
 
--> kod_2:
+% -> kod_2:
 I = imread('ders_3\filtresim1.png');
 a = rgb2gray(I);
 imshow(a);title('asıl goruntu');
@@ -31,7 +31,7 @@ figure,imshow(b2);title('filterlenmis goruntu');
 
 
 
--> kod_3:
+% -> kod_3:
 I2 = imread('ders_3\filtresim1.png');
 a2 = rgb2gray(I2);
 imshow(a);title('asıl goruntu');
@@ -50,7 +50,7 @@ b33 = uint8(b3); figure,imshow(b33);
 
 
 
--> kod_4:
+% -> kod_4:
 I2 = imread('ders_3\filtresim1.png');
 a2 = rgb2gray(I2);
 imshow(a2);title('asil goruntu');
@@ -66,7 +66,7 @@ figure,imshow(a2);title('temizlenmis goruntu');
 
 
 
--> kod_5:
+% -> kod_5:
 I3 = imread('ders_3\filtresim3.png');
 a3 = rgb2gray(I3);
 imshow(a3);title('asil goruntu');
@@ -85,7 +85,7 @@ figure,imshow(g7);title('5*5 gauss filtre');
 
 
 
--> kod_6:
+% -> kod_6:
 I4 = imread('ders_3\filtresim3.png');
 a4 = rgb2gray(I4);
 imshow(a4);title('asil goruntu');
