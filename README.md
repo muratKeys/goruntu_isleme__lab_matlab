@@ -16,8 +16,15 @@ https://e.edim.co/130434037/KiNzIUjwDhBYMCOw.pdf?response-content-disposition=fi
 
 #ders_3
 
+kod_1:
+![kod_1](https://user-images.githubusercontent.com/37161227/53623770-1ec65080-3c0f-11e9-9eaa-2c49d3f8199b.PNG)
+
+kod_2:
+![kod_2](https://user-images.githubusercontent.com/37161227/53623850-57662a00-3c0f-11e9-821d-ff1f58883fd7.PNG)
+
+kod_3:
+![kod_3](https://user-images.githubusercontent.com/37161227/53623961-af049580-3c0f-11e9-8f35-2d21d2fc90a9.PNG)
 
 kod_4:
-
 ![ekran alintisi](https://user-images.githubusercontent.com/37161227/53623428-102b6980-3c0e-11e9-917b-cbd943477099.PNG)
 
