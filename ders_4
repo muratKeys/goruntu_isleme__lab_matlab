@@ -53,7 +53,7 @@ prewitty = [-1 -1 -1; 0 0 0; 1 2 1];
 
 sobeld = [-1 0 1; -2 0 2; 1 2 1];
 sobely = [-1 -2 -1; 0 0 0; 1 2 1];
-
+% sobel sınır çıkartmak için dikey ve yatay filtreler
 I = imread('filtresim3.png');
 
 I2 = filter2(prewittd, I, 'same');
@@ -62,3 +62,11 @@ I3 = filter2(prewitty, I2, 'same');
 figure, imshow(I3);
 I4 = sqrt(I2.^2 + I3.^2);
 figure, imshow(I4/255);
+I5 = mat2gray(I4);
+I6 = imbinarize(I5);
+figure, imshow(I6);
+I7 = sqrt(I5.^2+I6.^2);
+figure, imshow(I7/255);
+I8 = mat2gray(I7);
+I9 = imbinarize(I8);
+figure, imshow(I9);
