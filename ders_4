@@ -23,3 +23,20 @@ subplot(2,2,3);imshow(blurred);title('Blur Goruntu');
 H3 = fspecial('average',9);
 ortalama = imfilter(MotionBlur, H3);
 subplot(2,2,4);imshow(ortalama);title('9*9 ortalama');
+
+
+
+% -> kod3
+r = imread('filtresim3.png');
+figure, imshow(r);
+
+rg = imnoise(r,'salt & pepper');
+figure,imshow(rg)
+rg2 = imnoise(r,'salt & pepper',0.2);
+figure,imshow(rg2)
+
+f3 = fspecial('average', 5);
+fg1 = imfilter(rg, f3);
+figure, imshow(fg1)
+fg2 = imfilter(rg2, f3);
+figure, imshow(fg2)
