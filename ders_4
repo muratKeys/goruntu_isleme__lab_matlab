@@ -40,3 +40,9 @@ fg1 = imfilter(rg, f3);
 figure, imshow(fg1)
 fg2 = imfilter(rg2, f3);
 figure, imshow(fg2)
+
+mf_rg = medfilt2(rg);
+figure, imshow(mf_rg);
+mf_rg2 = medfilt2(rg2);
+figure, imshow(mf_rg2);
+
