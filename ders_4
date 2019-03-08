@@ -70,3 +70,5 @@ figure, imshow(I7/255);
 I8 = mat2gray(I7);
 I9 = imbinarize(I8);
 figure, imshow(I9);
+
+% sadece ana hatlar için sobely veya premity kullanılır. canny ise daha detaylı sınır çizimleri elde edilir. 
