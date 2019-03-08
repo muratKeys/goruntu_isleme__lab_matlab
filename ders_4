@@ -1,1 +1,25 @@
-s
+% -> kod1
+I2 = imread('filtresim3.png');
+h = ones(5,5)/25;
+I3 = imfilter(I2,h);
+imshow(I2), title('asil goruntu');
+figure,imshow(I3);title('filtre eklenmis goruntu');
+
+
+%Özel filtreler
+
+% -> kod2
+I = imread('filtresim3.png');
+subplot(2,2,1); imshow(I);title('Orjinal resil');
+
+H1 = fspecial('motion', 11, 90);
+MotionBlur = imfilter(I, H1, 'replicate');
+subplot(2,2,2);imshow(MotionBlur);title('Motion Blurres Image');
+
+H2 = fspecial('disk', 11);
+blurred = imfilter(I, H2, 'replicate');
+subplot(2,2,3);imshow(blurred);title('Blur Goruntu');
+
+H3 = fspecial('average',9);
+ortalama = imfilter(MotionBlur, H3);
+subplot(2,2,4);imshow(ortalama);title('9*9 ortalama');
