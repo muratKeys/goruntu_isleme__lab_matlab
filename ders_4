@@ -46,3 +46,19 @@ figure, imshow(mf_rg);
 mf_rg2 = medfilt2(rg2);
 figure, imshow(mf_rg2);
 
+
+% -> kod_4
+prewittd = [-1 0 1; -1 0 1; -1 0 1];
+prewitty = [-1 -1 -1; 0 0 0; 1 2 1];
+
+sobeld = [-1 0 1; -2 0 2; 1 2 1];
+sobely = [-1 -2 -1; 0 0 0; 1 2 1];
+
+I = imread('filtresim3.png');
+
+I2 = filter2(prewittd, I, 'same');
+figure, imshow(I2);
+I3 = filter2(prewitty, I2, 'same');
+figure, imshow(I3);
+I4 = sqrt(I2.^2 + I3.^2);
+figure, imshow(I4/255);
