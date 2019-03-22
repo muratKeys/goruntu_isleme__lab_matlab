@@ -54,3 +54,36 @@ figure,imshow(c);
 d = imbinarize(c);
 figure, imshow(d);
 
+
+
+
+% --> kod_2:
+a=imread('lung7.png');
+figure,imshow(a);
+b=rgb2gray(a);
+figure, imhist(b);
+[m n]=size(b);
+
+
+c=b;
+for i=1:m
+    for j=1:n
+        if b(i,j)<120 %eşik değerinden kucuk olan pixeller 120'ye eşitleniyor
+           c(i,j)=0;
+        end
+    end
+end
+
+figure,imshow(c);
+
+d = imbinarize(c);
+figure, imshow(d);
+
+e = bwareaopen(d,500); % alansl açma işlemi
+figure, imshow(e); %+ pixelden kucuk komsuluklar silindi
+
+f=d-e; % ilk ikili goruntu ile farkı almak alınarak buyuk komsuluklar dısarıda bırakılır
+figure, imshow(f);
+
+g = bwareaopen(f,10); % inceleme için kucuk olan yapılar eklendi
+figure, imshow(g); %10 px ten kıcık olanlar
