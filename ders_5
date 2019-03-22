@@ -1,5 +1,7 @@
 
 %Eşikleme:
+
+% --> kod_1:
 I=imread('filresim2.png');
 I2 = rgb2gray(I);
 
@@ -10,3 +12,20 @@ figure,imshow(I3);title("esik=160");
 T=graythresh(I);
 I4=imbinarize(I,T);
 figure,imshow(I4);title("Otsu esik");
+
+
+% --> kod_2:
+a=imread('filtresim4.png');
+figure,imhist(a);
+
+b=a; [m n]=size(a);
+for i=1:m
+    for j=1:n
+        if a(i,j)>40
+           b(i,j)=255;
+        end
+    end
+end
+
+figure,imshow(b);
+
