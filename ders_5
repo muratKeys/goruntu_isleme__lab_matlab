@@ -15,6 +15,8 @@ figure,imshow(I4);title("Otsu esik");
 
 
 
+
+
 % --> kod_2:
 a=imread('filtresim4.png');
 figure,imhist(a);
@@ -32,13 +34,14 @@ figure,imshow(b);
 
 
 
+
+
 % --> kod_2:
 a=imread('lung7.png');
 figure,imshow(a);
 b=rgb2gray(a);
 figure, imhist(b);
 [m n]=size(b);
-
 
 c=b;
 for i=1:m
@@ -57,13 +60,13 @@ figure, imshow(d);
 
 
 
+
 % --> kod_3:
 a=imread('lung7.png');
 figure,imshow(a);
 b=rgb2gray(a);
 figure, imhist(b);
 [m n]=size(b);
-
 
 c=b;
 for i=1:m
@@ -99,7 +102,6 @@ b=rgb2gray(a);
 figure, imhist(b);
 [m n]=size(b);
 
-
 c=b;
 for i=1:m
     for j=1:n
@@ -122,7 +124,6 @@ figure, imshow(f);
 
 g = bwareaopen(f,10); % inceleme için kucuk olan yapılar eklendi
 figure, imshow(g); %10 px ten kıcık olanlar
-
 
 L=bwlabel(g); % oznitelik çıkarımı için etiket matrisi oluşturuldu
 figure, imshow(L);
@@ -153,7 +154,6 @@ b=rgb2gray(a);
 figure, imhist(b);
 [m n]=size(b);
 
-
 c=b;
 for i=1:m
     for j=1:n
@@ -176,7 +176,6 @@ figure, imshow(f);
 
 g = bwareaopen(f,10); % inceleme için kucuk olan yapılar eklendi
 figure, imshow(g); %10 px ten kıcık olanlar
-
 
 L=bwlabel(g); % oznitelik çıkarımı için etiket matrisi oluşturuldu
 figure, imshow(L);
