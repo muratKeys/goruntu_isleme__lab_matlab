@@ -137,6 +137,6 @@ for i=1: length(ozellik) %struct eleman sayisi kadar dongu
         x0=ozellik(i).Centroid(1); % merkezin x koordinatı
         y0=ozellik(i).Centroid(2); % merkezin y koordinatı
         plot(x0,y0,'x','LineWidth', 1, 'Color','r'); % o noktayı x isareti, kalınlık 1 renk kırmızı
-        text(x0,y0+5,int2str(i)); % merkezin 5 px sagına eleman no yaz
+        text(x0,y0+5,int2str(i),'Color','r'); % merkezin 5 px sagına eleman no yaz
     end
 end
