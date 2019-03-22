@@ -57,7 +57,7 @@ figure, imshow(d);
 
 
 
-% --> kod_2:
+% --> kod_3:
 a=imread('lung7.png');
 figure,imshow(a);
 b=rgb2gray(a);
@@ -87,3 +87,56 @@ figure, imshow(f);
 
 g = bwareaopen(f,10); % inceleme için kucuk olan yapılar eklendi
 figure, imshow(g); %10 px ten kıcık olanlar
+
+
+
+
+
+% --> kod_4:
+a=imread('lung7.png');
+figure,imshow(a);
+b=rgb2gray(a);
+figure, imhist(b);
+[m n]=size(b);
+
+
+c=b;
+for i=1:m
+    for j=1:n
+        if b(i,j)<120 %eşik değerinden kucuk olan pixeller 120'ye eşitleniyor
+           c(i,j)=0;
+        end
+    end
+end
+
+figure,imshow(c);
+
+d = imbinarize(c);
+figure, imshow(d);
+
+e = bwareaopen(d,500); % alansl açma işlemi
+figure,imshow(e); %+ pixelden kucuk komsuluklar silindi
+
+f=d-e; % ilk ikili goruntu ile farkı almak alınarak buyuk komsuluklar dısarıda bırakılır
+figure, imshow(f);
+
+g = bwareaopen(f,10); % inceleme için kucuk olan yapılar eklendi
+figure, imshow(g); %10 px ten kıcık olanlar
+
+
+L=bwlabel(g); % oznitelik çıkarımı için etiket matrisi oluşturuldu
+figure, imshow(L);
+LL=label2rgb(L); %etiket matrisi renklendirildi
+figure, imshow(LL);
+
+ozellik = regionprops(L,g); % her yapıya öznitelikler hesaplanıp bir structrura kaydedildi
+
+figure, imshow(g); hold on;
+for i=1: length(ozellik) %struct eleman sayisi kadar dongu
+    if ozellik(i).Area>40 % i. elemanın alanı 40 px ten buyuk ise
+        x0=ozellik(i).Centroid(1); % merkezin x koordinatı
+        y0=ozellik(i).Centroid(2); % merkezin y koordinatı
+        plot(x0,y0,'x','LineWidth', 1, 'Color','r'); % o noktayı x isareti, kalınlık 1 renk kırmızı
+        text(x0,y0+5,int2str(i)); % merkezin 5 px sagına eleman no yaz
+    end
+end
