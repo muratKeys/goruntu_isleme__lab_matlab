@@ -34,16 +34,22 @@ L = bwlabel(BW);
 
 blobs = regionprops(L); % Etiketlere ait özellikler çıkarılıyor hangileri?
 areas = cat(1, blobs(:).Area); % Alan özellikleri tek matrise alonıyor
-[value, index] = max(areas)
-rectangle('Position', props(index).BoundingBox, 'EdgeColor', 'r');
+[value, index] = max(areas) % kaçıncı etiket en büyük alana sahip ve bu alan kaç?
+rectangle('Position', props(index).BoundingBox, 'EdgeColor', 'r'); 
+% restangle: Son görüntülenen resim üzernde belirtilen koordinatlara dörtgen çizer
+% blobs içerisindeki index nolu etiketin 'BoundingBox' koordinarlarına
+% kırmızı ekle
 
 
 
-x0 = blobs(index).Centroid(1);
-y0 = blobs(index).Centroid(2);
+x0 = blobs(index).Centroid(1); %index nolu etiketin merkez knoktalarının x koordinatı
+y0 = blobs(index).Centroid(2); % index nolu etiketin merkez noktasının y koordinatı 
+% line: belirtilen koordinatlar arasında çizgi çizer.
 
 line([x0-5 x0+5], [y0 y0], 'Color', 'r');
 line([x0 x0], [y0-5 y0+5], 'Color', 'r');
+
+
 
 
 
