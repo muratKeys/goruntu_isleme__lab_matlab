@@ -1,1 +1,22 @@
 
+%%%%
+Kod_1
+%%%%
+
+I = imread('pennies.tif');
+I = rgb2gray(I); imshow(I);
+
+SE = strel('disk', 6.0); % disk şeklinde yapı elemanı
+I2 = imopen(I, SE); % açma işlemi
+figure, imshow(I2);
+
+B = I2 > 150 % 150 ile eşikleyip ikili görüntüye çevirme
+figure, imshow(B);
+L = bwlabel(B); % etikleme
+LL = label2rgb(L); figure, imshow(LL);
+
+props = regionprops(L); %% özellik çıkar
+figure(1); % birinci şekil aktif-original resim
+for i = 1:length(props) %% original resim üzerinde ikili görüntüde etiketlenen daireleri işaretle
+    rectangle('Position', props(i).BoundingBox, 'EdgeColor', 'r');
+end
