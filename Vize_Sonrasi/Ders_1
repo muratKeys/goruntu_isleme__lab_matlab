@@ -20,3 +20,43 @@ figure(1); % birinci şekil aktif-original resim
 for i = 1:length(props) %% original resim üzerinde ikili görüntüde etiketlenen daireleri işaretle
     rectangle('Position', props(i).BoundingBox, 'EdgeColor', 'r');
 end
+
+
+%%%%
+Kod_2
+%%%%
+
+I = imread('res1.jpg');
+BW = imbinarize(I);
+imshow(I);
+L = bwlabel(BW);
+
+
+blobs = regionprops(L); % Etiketlere ait özellikler çıkarılıyor hangileri?
+areas = cat(1, blobs(:).Area); % Alan özellikleri tek matrise alonıyor
+[value, index] = max(areas)
+rectangle('Position', props(index).BoundingBox, 'EdgeColor', 'r');
+
+
+
+x0 = blobs(index).Centroid(1);
+y0 = blobs(index).Centroid(2);
+
+line([x0-5 x0+5], [y0 y0], 'Color', 'r');
+line([x0 x0], [y0-5 y0+5], 'Color', 'r');
+
+
+
+
+
+%%%%
+Kod_3
+%%%%
+
+%%%%
+Kod_1
+%%%%
+
+%%%%
+Kod_1
+%%%%
