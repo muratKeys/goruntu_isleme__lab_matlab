@@ -54,15 +54,56 @@ line([x0 x0], [y0-5 y0+5], 'Color', 'r');
 
 
 
-
 %%%%
 Kod_3
 %%%%
 
+I = imread('res1.jpg');
+BW = imbinarize(I);
+imshow(I);
+L = bwlabel(BW);
+
+blobs = regionprops(L); % Etiketlere ait özellikler çıkarılıyor hangileri?
+areas = cat(1, blobs(:).Area); % Alan özellikleri tek matrise alonıyor
+[value, index] = max(areas) % kaçıncı etiket en büyük alana sahip ve bu alan kaç?
+ort = mean(areas);
+indisler = find(areas>ort); %find bir matris içerisinde belirtilen sartı 
+buyukler = blobs(indisler); %saglayan elemanarın indi numaralarını bulur
+for i=1:length(buyukler)    % % belirtilen indisleri ayrı bir struct'a tasıyor
+    rectangle('Position', buyukler(i).BoundingBox, 'EdgeColor', 'r');
+end
+% rectangle('Position', props(index).BoundingBox, 'EdgeColor', 'r'); 
+% restangle: Son görüntülenen resim üzernde belirtilen koordinatlara dörtgen çizer
+% blobs içerisindeki index nolu etiketin 'BoundingBox' koordinarlarına
+% kırmızı ekle
+for i=length(buyukler)
+    x0 = blobs(i).Centroid(1); %index nolu etiketin merkez knoktalarının x koordinatı
+    y0 = blobs(i).Centroid(2); % index nolu etiketin merkez noktasının y koordinatı 
+    % line: belirtilen koordinatlar arasında çizgi çizer.
+    line([x0-5 x0+5], [y0 y0], 'Color', 'r');
+    line([x0 x0], [y0-5 y0+5], 'Color', 'r');
+end
+
+
+
+
+
 %%%%
-Kod_1
+Kod_4
 %%%%
 
 %%%%
-Kod_1
+Kod_5
+%%%%
+
+%%%%
+Kod_6
+%%%%
+
+%%%%
+Kod_7
+%%%%
+
+%%%%
+Kod_8
 %%%%
