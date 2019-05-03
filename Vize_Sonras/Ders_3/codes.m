@@ -19,3 +19,29 @@ title('Hough transform of grantrycrane');
 xlabel('\theta'), ylabel('\rho');
 axis on, axis normal, hold on;
 colormap(hot);
+
+
+
+
+
+
+%%%%%%
+%Code_2
+%%%%%%
+
+clear all
+clear all
+
+I = imread('gantrycrane.png');
+G = rgb2gray(I);
+E = edge(G, 'canny'); imshow(E);
+[H,theta,rho] = hough(E);
+figure, imshow(H,[]);
+
+peaks = houghpeaks(H, 50, 'Threshold', 30);
+figure, imshow(G,[]), hold on;
+lines = houghlines(E, theta, rho, peaks, 'FillGap', 5, 'MinLength', 15);
+for k = 1:length(lines)
+    xy = [lines(k).point1;lines(k).point2];
+    line(xy(:,1), xy(:,2), 'LineWidth', 1, 'Color',  'r');
+end
